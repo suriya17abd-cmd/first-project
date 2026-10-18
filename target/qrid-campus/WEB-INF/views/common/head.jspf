@@ -1,0 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="${sessionScope.csrfToken}">
+<title>${empty pageTitle ? 'QRID Campus' : pageTitle.concat(' | QRID Campus')}</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css">

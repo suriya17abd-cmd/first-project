@@ -1,0 +1,4 @@
+identity_no,full_name,email,person_type,department,course,valid_from,valid_until
+STU/CSE/2026/101,Kavya Selvan,kavya@example.edu,STUDENT,Computer Science,B.Sc Computer Science,2026-06-01,2029-05-31
+STU/BBA/2026/102,Vignesh Raj,vignesh@example.edu,STUDENT,Business Administration,BBA,2026-06-01,2029-05-31
+EMP/2026/103,Priya Devi,priya@example.edu,STAFF,Mathematics,Faculty,2026-01-01,2030-12-31

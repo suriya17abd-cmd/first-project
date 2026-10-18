@@ -1,0 +1,1 @@
+<c:if test="${not empty sessionScope.flashMessage}"><div class="alert alert-${sessionScope.flashType} alert-dismissible fade show auto" role="alert">${sessionScope.flashMessage}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div><c:remove var="flashMessage" scope="session"/><c:remove var="flashType" scope="session"/></c:if>

@@ -1,0 +1,6 @@
+package com.qrid.filter;
+import com.qrid.model.User;import javax.servlet.*;import javax.servlet.annotation.WebFilter;import javax.servlet.http.*;import java.io.IOException;
+@WebFilter(urlPatterns={"/admin/*","/security/*","/staff/*","/profile","/logout","/identity-photo","/card","/verify"})
+public class AuthFilter implements Filter{
+ public void doFilter(ServletRequest req,ServletResponse res,FilterChain chain)throws IOException,ServletException{HttpServletRequest r=(HttpServletRequest)req;HttpServletResponse s=(HttpServletResponse)res;User u=(User)r.getSession().getAttribute("user");if(u==null){s.sendRedirect(r.getContextPath()+"/login?next="+java.net.URLEncoder.encode(r.getRequestURI(),java.nio.charset.StandardCharsets.UTF_8));return;}String path=r.getRequestURI().substring(r.getContextPath().length());if(path.startsWith("/admin/")&&!"ADMIN".equals(u.getRole())||path.startsWith("/security/")&&!("SECURITY".equals(u.getRole())||"ADMIN".equals(u.getRole()))||path.startsWith("/staff/")&&!("STAFF".equals(u.getRole())||"ADMIN".equals(u.getRole()))||path.equals("/verify")&&!("SECURITY".equals(u.getRole())||"ADMIN".equals(u.getRole()))){s.sendError(403);return;}chain.doFilter(req,res);}
+}
